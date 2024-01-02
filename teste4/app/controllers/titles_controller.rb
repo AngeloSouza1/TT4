@@ -6,16 +6,8 @@
 class TitlesController < ApplicationController
   def index
     titles = Title.all
-
-    titles = titles.where(year: params[:year]) if params[:year].present?
-    titles = titles.where(genre: params[:genre]) if params[:genre].present?
-    titles = titles.where(country: params[:country]) if params[:country].present?
-
-    titles = if params[:order] == 'year_asc'
-               titles.order('published_at ASC')
-             else
-               titles.order('published_at DESC')
-             end
+    titles = filter_titles(titles)
+    titles = order_titles(titles)
 
     titles_response = titles.map do |title|
       {
@@ -24,11 +16,24 @@ class TitlesController < ApplicationController
         genre: title.genre,
         year: title.year,
         country: title.country,
-        published_at: title.published_at.strftime('%Y-%m-%d'),
+        published_at: title.published_at.to_s,
         description: title.description
       }
     end
 
     render json: titles_response
+  end
+
+  private
+
+  def filter_titles(titles)
+    titles = titles.where(year: params[:year]) if params[:year].present?
+    titles = titles.where(genre: params[:genre]) if params[:genre].present?
+    titles = titles.where(country: params[:country]) if params[:country].present?
+    titles
+  end
+
+  def order_titles(titles)
+    params[:order] == 'year_asc' ? titles.order('published_at ASC') : titles.order('published_at DESC')
   end
 end

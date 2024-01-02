@@ -12,7 +12,7 @@ require 'rails/all'
 Bundler.require(*Rails.groups)
 
 module Teste4
-  #Configurações gerais da aplicação Teste4.
+  # Configurações gerais da aplicação Teste4.
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.1

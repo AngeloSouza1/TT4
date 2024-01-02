@@ -2,7 +2,7 @@
 
 # app/controllers/csv_importer_controller.rb
 
-# Descrição da classe CsvImporterController
+# Controller responsável pela importação de dados a partir de um arquivo CSV.
 class CsvImporterController < ApplicationController
   require 'csv'
 
@@ -13,6 +13,16 @@ class CsvImporterController < ApplicationController
       return render json: { error: 'Arquivo CSV não encontrado' }, status: :unprocessable_entity
     end
 
+    import_csv(file_path)
+
+    render json: { success: true, message: 'CSV importado com sucesso!' }
+  rescue StandardError => e
+    render json: { error: "Falha na importação do CSV: #{e.message}" }, status: :unprocessable_entity
+  end
+
+  private
+
+  def import_csv(file_path)
     CSV.foreach(file_path, headers: true) do |row|
       title_attributes = {
         title: row['title'].presence || 'Default Title',
@@ -25,9 +35,5 @@ class CsvImporterController < ApplicationController
 
       Title.find_or_create_by(title_attributes)
     end
-
-    render json: { success: true, message: 'CSV importado com sucesso!' }
-  rescue StandardError => e
-    render json: { error: "Falha na importação do CSV: #{e.message}" }, status: :unprocessable_entity
   end
 end
