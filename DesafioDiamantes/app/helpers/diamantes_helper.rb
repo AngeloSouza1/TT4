@@ -1,0 +1,2 @@
+module DiamantesHelper
+end

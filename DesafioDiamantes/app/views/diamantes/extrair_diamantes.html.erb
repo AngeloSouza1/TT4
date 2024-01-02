@@ -1,0 +1,21 @@
+<!-- app/views/diamantes/extrair_diamantes.html.erb -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Extrair Diamantes</title>
+</head>
+<body class="text-center">
+  <div class="container">
+    <h2 class="mt-5">Expressão Original:</h2>
+    <h1 class="text-primary font-weight-bold mt-5"><%= @expressao %></h1>
+    <h3 class="mt-4">Resultado:</h3>
+    <br>
+    <h5> Quantidade de diamantes"<>": <%= @resultado[:diamantes] %></h5>
+    <h5> Quantidade de grãos de areia  ".": <%= @resultado[:areias] %></h5>
+  </div>
+</body>
+</html>
+
