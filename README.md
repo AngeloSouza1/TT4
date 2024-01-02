@@ -27,7 +27,7 @@ No contexto deste desafio, abordamos a implementação e testes de tarefas deter
 
 ### *Questão 1*
  <p align="left"> 
- - Desafio API'
+ - Desafio API
 </p>
 <p> 
    <a href="https://github.com/AngeloSouza1/TT4/issues/">
