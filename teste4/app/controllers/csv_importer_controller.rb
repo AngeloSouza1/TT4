@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+# app/controllers/csv_importer_controller.rb
+
+# Descrição da classe CsvImporterController
 class CsvImporterController < ApplicationController
   require 'csv'
 

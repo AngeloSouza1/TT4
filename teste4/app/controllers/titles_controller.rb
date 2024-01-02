@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+# app/controllers/titles_controller.rb
+
+# Descrição da classe TitlesController
 class TitlesController < ApplicationController
   def index
     titles = Title.all

@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+# db/migrate/20240102141515_create_titles.rb
+
+# Descrição da classe CreateTitles
 class CreateTitles < ActiveRecord::Migration[7.1]
   def change
     create_table :titles do |t|
