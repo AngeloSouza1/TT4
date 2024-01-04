@@ -16,7 +16,6 @@ No contexto deste desafio, abordamos a implementação e testes de tarefas deter
  <a href="https://vimeo.com/899300301">
     <img src="https://img.shields.io/badge/VIDEO%20DEMONSTRAÇÃO  -darkgreen" alt="Site">
  </a>
- 
 
   <img src="https://videoapi-muybridge.vimeocdn.com/animated-thumbnails/image/73de0bc0-4711-4042-81fc-4a647ec12ee8.gif?ClientID=vimeo-core-prod&Date=1704238270&Signature=19ebdd58bc82d96a8fa1a66a79dcf334495b8904" width="300">
 </a>
